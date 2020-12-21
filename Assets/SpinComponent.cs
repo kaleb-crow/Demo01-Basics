@@ -5,8 +5,12 @@ using UnityEngine;
 
 public class SpinComponent : MonoBehaviour
 {
+    public float xAngle;
+    public float yAngle;
+    public float zAngle;
     private Transform myTransform;
     private bool printedmessage = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +26,9 @@ public class SpinComponent : MonoBehaviour
             Debug.Log("Hello from Update");
             printedmessage = true;
         }
-        myTransform.Rotate(0.1f, 0f, 0f);
+        if(!(Input.GetKey(KeyCode.Space)))
+        {
+            myTransform.Rotate(0.1f, 0f, 0f);
+        }
     }
 }
